@@ -6,7 +6,6 @@ on:
       - master
 jobs:
   build:
-    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
