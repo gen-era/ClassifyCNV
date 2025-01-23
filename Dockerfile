@@ -64,7 +64,7 @@ RUN wget https://github.com/arq5x/bedtools2/releases/download/v2.29.1/bedtools-2
     rm ../bedtools-2.29.1.tar.gz
 
 # Set up working directory and copy application
-COPY ClassifyCNV /ClassifyCNV
+COPY path/to/ClassifyCNV /ClassifyCNV
 WORKDIR /ClassifyCNV
 
 # Set default command
