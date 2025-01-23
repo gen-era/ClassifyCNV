@@ -31,4 +31,3 @@ jobs:
             ghcr.io/classifycnv:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          push: true
