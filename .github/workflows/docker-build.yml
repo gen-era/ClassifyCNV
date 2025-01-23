@@ -26,8 +26,8 @@ jobs:
         with:
           context: .
           tags: |
-            ghcr.io/arkhammknight/classifycnv:latest
-            ghcr.io/arkhammknight/classifycnv:${{ github.sha }}
+            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/${{ github.repository }}:${{ github.sha }}
           cache-from: type=gha,scope=clear
           cache-to: type=gha,scope=clear,mode=max
           push: true
