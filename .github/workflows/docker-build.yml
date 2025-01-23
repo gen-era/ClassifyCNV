@@ -12,6 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Test with Python
+        run: |
+          python3 ClassifyCNV.py \
+            --infile Examples/ACMG_examples.hg19.bed \
+            --GenomeBuild hg19 \
+            --precise
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -27,7 +34,6 @@ jobs:
         run: |
           LOWERCASE_REPO=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
           echo "REPO_NAME=$LOWERCASE_REPO" >> $GITHUB_ENV
-          echo "LOWERCASE_REPO=$LOWERCASE_REPO" >> $GITHUB_OUTPUT
 
       - name: Build and push
         uses: docker/build-push-action@v5
